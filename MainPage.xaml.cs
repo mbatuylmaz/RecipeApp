@@ -1,23 +1,16 @@
 ﻿namespace RecipeApp;
 
+using RecipeApp.ViewModels;
+
 public partial class MainPage : ContentPage
 {
-	int count = 0;
-
-	public MainPage()
+	// Constructor (Kurucu Metot)
+	public MainPage(MainViewModel viewModel)
 	{
 		InitializeComponent();
-	}
 
-	private void OnCounterClicked(object? sender, EventArgs e)
-	{
-		count++;
-
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
-
-		SemanticScreenReader.Announce(CounterBtn.Text);
+		// KRİTİK SATIR: Bu sayfanın verileri nereden alacağını bağlıyoruz.
+		// Bu satır olmazsa XAML dosyan ViewModel'deki listeyi göremez.
+		BindingContext = viewModel;
 	}
 }

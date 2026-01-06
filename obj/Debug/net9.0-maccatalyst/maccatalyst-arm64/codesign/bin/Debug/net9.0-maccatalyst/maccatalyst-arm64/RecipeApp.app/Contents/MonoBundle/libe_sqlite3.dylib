@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - /Users/batu/RecipeApp/bin/Debug/net9.0-maccatalyst/maccatalyst-arm64/RecipeApp.app/Contents/MonoBundle/libe_sqlite3.dylib

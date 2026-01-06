@@ -6,7 +6,7 @@ namespace RecipeApp.Services;
 
 public class DatabaseService
 {
-    private SQLiteAsyncConnection _database;
+    private SQLiteAsyncConnection? _database; // soru işareti bu değişkenin başlangıçta boş olabileceğini işaret ediyor.
 
     async Task Init() // veritabanına herhangi bir şey sormak veya değiştirmek için bu metodu kullanıyoruz. initialize başlat hazırla gibi bişi
     {

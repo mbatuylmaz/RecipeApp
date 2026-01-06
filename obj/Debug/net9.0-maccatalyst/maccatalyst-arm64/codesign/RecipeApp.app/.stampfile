@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - --entitlements /Users/batu/RecipeApp/obj/Debug/net9.0-maccatalyst/maccatalyst-arm64/Entitlements.xcent /Users/batu/RecipeApp/bin/Debug/net9.0-maccatalyst/maccatalyst-arm64/RecipeApp.app

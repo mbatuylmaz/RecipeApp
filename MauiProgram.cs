@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using RecipeApp.Services;
+using RecipeApp.ViewModels;
 
 namespace RecipeApp;
 
@@ -20,6 +22,8 @@ public static class MauiProgram
 #endif
 
 		builder.Services.AddSingleton<DatabaseService>();
+		builder.Services.AddSingleton<MainPage>();
+		builder.Services.AddSingleton<MainViewModel>();
 		return builder.Build();
 	}
 }
