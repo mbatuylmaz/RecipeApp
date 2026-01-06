@@ -19,6 +19,7 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
+		builder.Services.AddSingleton<DatabaseService>();
 		return builder.Build();
 	}
 }
