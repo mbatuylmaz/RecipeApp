@@ -27,6 +27,8 @@ public static class MauiProgram
 		builder.Services.AddSingleton<MainViewModel>();
 		builder.Services.AddTransient<AddRecipePage>();//her açıldığında temiz sıfırdan gelsin diye transient kullanıyoz
 		builder.Services.AddTransient<AddRecipeViewModel>();
+		builder.Services.AddTransient<RecipeDetailPage>();
+		builder.Services.AddTransient<RecipeDetailViewModel>();
 		return builder.Build();
 	}
 }

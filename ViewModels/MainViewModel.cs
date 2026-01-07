@@ -36,4 +36,19 @@ public partial class MainViewModel : ObservableObject //ObservableO ile bu sın�
     {
         await Shell.Current.GoToAsync(nameof(Views.AddRecipePage));
     }
+
+    [RelayCommand]//Binding GoToDetailsCommand
+    public async Task GoToDetails(Recipe selectedRecipe) //binding selecteditem buraya geliyor
+    {
+        if (selectedRecipe == null) return;
+
+        // Detay sayfasına git ve yanına seçilen tarifi de al!
+        await Shell.Current.GoToAsync(nameof(Views.RecipeDetailPage), true, new Dictionary<string, object>
+        {
+            { "Recipe", selectedRecipe }
+        });
+        SelectedRecipe = null;//seçimi sıfırlama, bu sayede geri döndüğünde tekrar basabiliyorsun
+    }
+    [ObservableProperty]
+    Recipe? selectedRecipe; // "?" koyuyoruz çünkü başta hiçbiri seçili olmuyor. binding selectedrecipe
 }

@@ -14,7 +14,11 @@
                 Margin="10"/>
 
         <CollectionView Grid.Row="1"
-                        ItemsSource="{Binding Recipes}">
+                        ItemsSource="{Binding Recipes}"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedRecipe}"
+                        SelectionChangedCommand="{Binding GoToDetailsCommand}"
+                        SelectionChangedCommandParameter="{Binding SelectedItem, Source={RelativeSource Self}}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Recipe">
                     <VerticalStackLayout Padding="10">
