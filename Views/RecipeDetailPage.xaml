@@ -3,40 +3,59 @@
              xmlns:viewModels="clr-namespace:RecipeApp.ViewModels"
              x:DataType="viewModels:RecipeDetailViewModel"
              x:Class="RecipeApp.Views.RecipeDetailPage"
-             Title="{Binding Recipe.Title}">
+             Title="Tarif Detayı"
+             BackgroundColor="#121212">
 
-        <ScrollView Padding="20">
-                <VerticalStackLayout Spacing="15">
-                        <Label Text="{Binding Recipe.Title}"
-                               FontSize="24"
-                               FontAttributes="Bold"
-                               HorizontalOptions="Center"/>
-                        <Label Text="{Binding Recipe.Category}"
-                               FontSize="16"
-                               TextColor="Gray"
-                               HorizontalOptions="Center"/>
+       <ScrollView Padding="25">
+              <VerticalStackLayout Spacing="15">
+                     <Label Text="{Binding Recipe.Title}"
+                            FontSize="32"
+                            FontAttributes="Bold"
+                            TextColor="White"
+                            HorizontalOptions="Center"/>
+                     <Label Text="{Binding Recipe.Category}"
+                            FontSize="18"
+                            TextColor="#03DAC6"
+                            HorizontalOptions="Center"
+                            Margin="0,0,0,10"/>
 
-                        <BoxView HeightRequest="1"
-                                 Color="LightGray"/>
+                     <BoxView HeightRequest="1"
+                              Color="#333333"/>
 
-                        <Label Text="Malzemeler"
-                               FontSize="20"
-                               FontAttributes="Bold"/>
-                        <Label Text="{Binding Recipe.Ingredients}"
-                               FontSize="16"/>
+                     <Label Text="📝 Malzemeler"
+                            FontSize="20"
+                            FontAttributes="Bold"
+                            TextColor="#03DAC6"/>
+                     <Frame>
+                            <Label Text="{Binding Recipe.Ingredients}"
+                                   FontSize="16"
+                                   TextColor="White"
+                                   LineHeight="1.5"/>
+                     </Frame>
 
-                        <Label Text="Nasıl Yapılır?"
-                               FontSize="20"
-                               FontAttributes="Bold"
-                               Margin="0,15,0,0"/>
-                        <Label Text="{Binding Recipe.Instructions}"
-                               FontSize="16"/>
-                        <Button Text="Tarifi Sil"
-                                Command="{Binding DeleteRecipeCommand}"
-                                BackgroundColor="Red"
-                                TextColor="White"
-                                FontAttributes="Bold"
-                                Margin="0,30,0,0"/>
-                </VerticalStackLayout>
-        </ScrollView>
+
+                     <Label Text="👨‍🍳 Hazırlanışı"
+                            FontSize="20"
+                            FontAttributes="Bold"
+                            TextColor="#03DAC6"
+                            Margin="0,10,0,0"/>
+                     <Frame BackgroundColor="#1E1E1E"
+                            Padding="15"
+                            HasShadow="False"
+                            BorderColor="#333333">
+                            <Label Text="{Binding Recipe.Instructions}"
+                                   FontSize="16"
+                                   TextColor="White"
+                                   LineHeight="1.5"/>
+                     </Frame>
+                     <Button Text="Tarifi Sil"
+                             Command="{Binding DeleteRecipeCommand}"
+                             BackgroundColor="Red"
+                             TextColor="White"
+                             FontAttributes="Bold"
+                             CornerRadius="10"
+                             HeightRequest="50"
+                             Margin="0,30,0,0"/>
+              </VerticalStackLayout>
+       </ScrollView>
 </ContentPage>
