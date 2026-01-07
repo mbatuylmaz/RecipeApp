@@ -1,6 +1,6 @@
 using SQLite;
 using RecipeApp.Models;
-//Bu kod sayesinde veriyi kaydedecek yeri yani DB'yi ve verileri listeleme kaydetme silme ekleme güncelleme yöntemlerini yazıp kazanıyoruz.
+//Bu kod sayesinde veriyi kaydedecek yeri yani DB'yi ve verileri listeleme kaydetme silme ekleme yöntemlerini yazıp kazanıyoruz.
 //Kısacası veri tabanı oluşturma ve yönetme kodu burası. Veri tabanı yöneticisi
 namespace RecipeApp.Services;
 
@@ -29,10 +29,7 @@ public class DatabaseService
     public async Task<int> SaveRecipeAsync(Recipe recipe) // ilk büyük R 'li Recipe vereceğim verinin şablonu Recipe şablonu olacak diyorum, ikinci küçük r olan recipe verdiğim veri oluyor. recipler'in ilki vereceğim verinin şablonu 2.si vereceğim veri oluyor yani.
     {
         await Init();
-        if (recipe.Id != 0) // eğer fonksiyonda recipe verisinin Id si 0 dan farklıysa yani mevcutsa recipe(yani yeni verilen veri) ile update ediyoruz o veriyi
-            return await _database.UpdateAsync(recipe);
-        else
-            return await _database.InsertAsync(recipe);//eğer recipe nin id'si 0 'sa yani tablomuzda mevcut değilse yeni id oluşturup insert ettiriyoruz bu recipe verisini.
+        return await _database.InsertAsync(recipe);//yeni id oluşturup insert ettiriyoruz bu recipe verisini.
     }
 
     public async Task<int> DeleteRecipeAsync(Recipe recipe)
